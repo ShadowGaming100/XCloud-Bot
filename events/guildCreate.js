@@ -14,7 +14,7 @@ client.on('guildCreate', guild =>{
         .addField(`Members`, `${guild.memberCount}`)
         .addField(`Channels`, `${guild.channelCount}`)
         .addField(`Roles`, `${guild.roleCount}`)
-        .addField
+        .addField(`Emojis`, `${guild.emojiCount}`)
         .setTimestamp()
         .setColor('RANDOM')
         .setFooter(`${client.guilds.cache.size} Guilds
