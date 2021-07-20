@@ -8,16 +8,20 @@ client.on('guildCreate', guild =>{
      
     if(!channel) return; 
     const join = new MessageEmbed()
+        .setThumbnail(guild.iconURL())
         .setTitle('I Joined A Guild!')
-        .setDescription(`Guild`, `Name ${guild.name}
-        Id ${guild.id}`)
+        .setDescription(`Join log `)
+        .addField(`Name`, `${guild.name}`)
+        .addField(`ID`, `${guild.id}`)
+        .addField(`Owner`,)
+        .addField(`Region`, `${guild.region}`)
         .addField(`Members`, `${guild.memberCount}`)
-        .addField(`Channels`, `${guild.channelCount}`)
-        .addField(`Roles`, `${guild.roleCount}`)
-        .addField(`Emojis`, `${guild.emojiCount}`)
+        .addField(`Channels`, `${guild.channels.cache.size}`)
+        .addField(`Roles`, `${guild.roles.cache.size}`)
+        .addField(`Emojis`, `${guild.emojis.cache.size}`)
         .setTimestamp()
         .setColor('RANDOM')
-        .setFooter(`${client.guilds.cache.size} Guilds
+        .setFooter(`${client.guilds.cache.size} Guild 
         ${client.users.cache.size} Members!`);
     channel.send(join);
 });
