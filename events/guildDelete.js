@@ -7,7 +7,7 @@ client.on('guildDelete', guild =>{
     if(!channel) return;  
     const leave = new MessageEmbed()
         .setTitle('I Left A Guild!')
-        .setDescription(`Guild`, `Name ${guild.name}
+        .setDescription(`Guild`, `${guild.name}
         Id ${guild.id}`)
         .addField(`Members`, `${guild.memberCount}`)
         .addField(`Channels`, `${guild.channelCount}`)

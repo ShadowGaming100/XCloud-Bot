@@ -17,6 +17,7 @@
     "discord-giveaways": "^4.5.1",
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "pretty-ms": "^7.0.1",
     "superagent": "^6.1.0"
   }

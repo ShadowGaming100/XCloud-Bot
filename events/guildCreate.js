@@ -13,9 +13,13 @@ client.on('guildCreate', guild =>{
         .setDescription(`Join log `)
         .addField(`Name`, `${guild.name}`)
         .addField(`ID`, `${guild.id}`)
-        .addField(`Owner`,)
+        .addField(`Owner`, `${guild.owner}`)
         .addField(`Region`, `${guild.region}`)
-        .addField(`Members`, `${guild.memberCount}`)
+        .addField(`Users`, `
+        All ${guild.memberCount}
+        Members
+        Bots
+        `)
         .addField(`Channels`, `${guild.channels.cache.size}`)
         .addField(`Roles`, `${guild.roles.cache.size}`)
         .addField(`Emojis`, `${guild.emojis.cache.size}`)
