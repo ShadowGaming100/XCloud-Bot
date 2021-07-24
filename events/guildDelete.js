@@ -6,17 +6,42 @@ client.on('guildDelete', guild =>{
     
     if(!channel) return;  
     const leave = new MessageEmbed()
-        .setTitle('I Left A Guild!')
-        .setDescription(`Guild`, `${guild.name}
-        Id ${guild.id}`)
-        .addField(`Members`, `${guild.memberCount}`)
-        .addField(`Channels`, `${guild.channelCount}`)
-        .addField(`Roles`, `${guild.roleCount}`)
-        .addField(`Emojis`, `${guild.emojiCount}`)
-        .setTimestamp()
-        .setColor('RANDOM')
-        .setFooter(`${client.guilds.cache.size} Guilds
-        ${client.users.cache.size} Members!`);
+      .setThumbnail(guild.iconURL())
 
+        .setTitle('I Joined A Guild!')
+
+        .setDescription(`Join log `)
+
+        .addField(`Name`, `${guild.name}`)
+
+        .addField(`ID`, `${guild.id}`)
+
+        .addField(`Owner`, `${guild.owner}`)
+
+        .addField(`Region`, `${guild.region}`)
+
+        .addField(`Users`, `
+
+        All ${guild.memberCount}
+
+        Members
+
+        Bots
+
+        `)
+
+        .addField(`Channels`, `${guild.channels.cache.size}`)
+
+        .addField(`Roles`, `${guild.roles.cache.size}`)
+
+        .addField(`Emojis`, `${guild.emojis.cache.size}`)
+
+        .setTimestamp()
+
+        .setColor('RANDOM')
+
+        .setFooter(`${client.guilds.cache.size} Guild 
+
+        ${client.users.cache.size} Members!`);
     channel.send(leave);
 });
