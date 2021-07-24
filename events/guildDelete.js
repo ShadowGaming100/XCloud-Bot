@@ -8,7 +8,7 @@ client.on('guildDelete', guild =>{
     const leave = new MessageEmbed()
       .setThumbnail(guild.iconURL())
 
-        .setTitle('I Joined A Guild!')
+        .setTitle('I Left A Guild!')
 
         .setDescription(`Join log `)
 
