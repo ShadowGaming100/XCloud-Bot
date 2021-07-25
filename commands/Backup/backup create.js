@@ -15,7 +15,7 @@ module.exports = {
                 return message.reply("You must be an administrator of this server to request a backup!").catch(e => console.log(e.stack.toString().red));
             }
             if (!message.guild.me.permissions.has("ADMINISTRATOR")) {
-                return message.reply("I AM MISSING PERMISSIONS").catch(e => console.log(e.stack.toString().red));
+                return message.reply(`I AM MISSING ADMINISTRATOR`).catch(e => console.log(e.stack.toString().red));
             }
 
             message.reply("LOADING...")
