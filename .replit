@@ -1,0 +1,14 @@
+modules = ["nodejs-16:v2-20230605-9621162", "python-3.10:v1-20230525-c48c43c"]
+hidden = [".config", "package-lock.json"]
+run = "npm run start"
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
