@@ -2,6 +2,9 @@
 FROM node:16-alpine
 
 
+# Clean npm cache
+RUN npm cache clean --force
+
 # Install any needed packages specified in package.json
 RUN npm install
 
@@ -12,4 +15,6 @@ EXPOSE 8080
 ENV NODE_ENV=production
 
 # Run app using the CMD directive
-CMD ["node", "index..js"]
+CMD ["node", "index.js"]
+
+
