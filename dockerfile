@@ -6,7 +6,7 @@ FROM node:16-alpine
 RUN npm install
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8085
+EXPOSE 8080
 
 # Define environment variable
 ENV NODE_ENV=production
