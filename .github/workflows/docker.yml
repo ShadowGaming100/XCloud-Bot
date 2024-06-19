@@ -1,0 +1,22 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on pushes to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Use Ubuntu as the operating system for the job
+
+    steps:
+      - name: Checkout Repository  # Checkout the repository code
+        uses: actions/checkout@v2
+      
+      - name: Log into Docker Hub  # Log in to Docker Hub using Docker CLI
+        run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+
+      - name: Build and Push Docker Image  # Build and push the Docker image
+        run: |
+          docker build -t myregistry.example.com/xcloud-bot:latest .  # Build the Docker image with tag
+          docker push myregistry.example.com/xcloud-bot:latest   # Push the Docker image to Docker Hub
