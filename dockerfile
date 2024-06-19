@@ -2,17 +2,17 @@
 FROM node:16-alpine
 
 # Set the working directory inside the container
-WORKDIR ./XCloud-Bot
+WORKDIR ./
 
 # Copy the package.json and package-lock.json (if available) to the working 
-COPY ./package*.json ../root/XCloud-Bot/
+COPY ./package*.json ./
 
 # Clean npm cache and install dependencies
 RUN npm cache clean --force && npm install
 
 # Copy the rest of the application code to the working directory
 
-COPY ./ ../root/XCloud-Bot
+COPY ./ ./
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8090
