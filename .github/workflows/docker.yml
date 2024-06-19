@@ -18,5 +18,5 @@ jobs:
 
       - name: Build and Push Docker Image  # Build and push the Docker image
         run: |
-          docker build -t myregistry.example.com/xcloud-bot:latest .  # Build the Docker image with tag
-          docker push myregistry.example.com/xcloud-bot:latest   # Push the Docker image to Docker Hub
+          docker build -t shadowgaming100/xcloud-bot:latest .  # Build the Docker image with tag
+          docker push shadowgaming100/xcloud-bot:latest   # Push the Docker image to Docker Hub
