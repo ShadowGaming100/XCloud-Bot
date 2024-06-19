@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const { prefix } = require("./config.json")
-const { CanvasSenpai } = require("canvas-senpai")
-const canva = new CanvasSenpai();
+
 const client = new Discord.Client();
 const fs = require("fs");
 const colours = require("./JSON/colours.json");
