@@ -2,10 +2,10 @@
 FROM node:16-alpine
 
 # Set the working directory inside the container
-WORKDIR ./
+WORKDIR ./XCloud-Bot
 
 # Copy the package.json and package-lock.json (if available) to the working 
-COPY ./package*.json ./
+COPY ./XCloud-Bot/package*.json ./XCloud-Bot
 
 # Clean npm cache and install dependencies
 RUN npm cache clean --force && npm install
